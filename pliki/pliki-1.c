@@ -1,33 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-/* kopiowanie zawartości pliku */
+int main()
+{
+    float i = 0.0;
 
-int main (int argc, char *argv[]) {
-  FILE *fin;   /* uchwyt do pliku wejściowego */
-  FILE *fout;  /* uchwyt do pliku wyjściowego */
-  int c;
+    while (i <= 1) {
+    	i += 0.1;
+	printf("%.2f\t%.2f\t%.2f\n", i, i*i,((float)rand()/RAND_MAX));
+	
+    }
 
-  if (argc != 3) {
-    printf("Użycie: %s SOURCE DEST\n", argv[0]);
-    return 3;
-  }
-  if ((fin = fopen(argv[1], "r")) == NULL) {
-    printf("Nie mogę otworzyć pliku do czytania '%s'\n", argv[1]);
-    return 1;
-  }
-  if ((fout = fopen(argv[2], "w")) == NULL) {
-    printf("Nie mogę otworzyć pliku do zapisu '%s'\n", argv[2]);
-    return 2;
-  }
-
-  printf("Kopiowanie pliku: %s -> %s\n", argv[1], argv[2]);
-
-  while ((c = fgetc(fin)) != EOF) {
-    fputc(c, fout);
-  }
-
-  fclose(fin);
-  fclose(fout);
-
-  return 0;
+    return 0;
 }
