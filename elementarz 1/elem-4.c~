@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(){
+	int i;
+
+	scanf("%i", &i);
+	int l = 1;
+	for (i;i>=1;i--){
+		l = l*i;
+	}
+	printf("%i\n", l);
+	return 0;
+}

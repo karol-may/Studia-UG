@@ -1,0 +1,11 @@
+// 5. Napisać funkcję rekurencyjną, która wypisuje wszystkie n-wyrazowe ciągi binarne
+#include <stdio.h>
+
+int main(){
+
+	int n;
+	scanf("%d",&n);
+	
+	printf("bin: %b",n);
+
+}
