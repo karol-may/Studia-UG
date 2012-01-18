@@ -1,87 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int* createArrayWithLen( char* type );
-int* createArray( int len, char* type );
-
-
-int* sortArray( int *pointer);
-
-void showArray( int *pointer );
-
-int main()
-{
-
-	int *ptr1 = createArray(7,"int");
-	
-	showArray(ptr1);
-	
-	int *ptr2 = sortArray(ptr1);
-	
-	showArray(ptr2);	
-	
-	
-	
-	
-return 0;
-}
-
-int* createArrayWithLen( char* type ){
+int main(){
 	int len;
 	
-	printf("Wpisz długość tworzonej tablicy: ");
-	
+	printf("Wpisz długość tablicy: ");
 	scanf("%d", &len);
 	
-	int *ptr = (int *) malloc((len + 1) * sizeof (int));
-		
-	*(ptr+0) = len;
-		
-	for(int i=1; i < (len+1) ;i++){
-	
-		scanf("%d",(ptr+i));
-	
-	}
-	
-	return ptr;
-}
+	float array[len], _ans[len];
 
-int* createArray( int len, char* type ){
-		
-	int *ptr = (int *) malloc((len + 1) * sizeof (int));
-		
-	*(ptr+0) = len;
-		
-	for(int i=1; i < (len+1) ;i++){
-	
-		scanf("%d",(ptr+i));
-	
-	}
-	
-	return ptr;
-}
+	for(int i=0;i<len;i++)
 
-void showArray(int *ptr ){
-	int len = *(ptr+0);
-	for(int i=1;i<(len+1);i++){
-	
-		printf("%d ",*(ptr+i));
-	
+	{
+		scanf("%f", &array[i]);
 	}
-	printf("\n\n");
-}
 
-int* sortArray( int *ptr ){
-	int len = *(ptr+0);
-	int _ar[] = {6,0,0,0,0,0,0};
-	int _ans[] = {7,0,0,0,0,0,0,0};	
-	int _c[] = {7,7,7,7,7,7,7,7};
-	for(int i=1;i<(len+1);i++){
 	
-		
-		for(int k=1;k<(len+1);k++){
-		
-			if (*(ptr+i) < *(ptr+k)) {
+	int _c[len];
+	
+	for(int i=0;i<len;i++){
+		_c[i] = len-1;
+		for(int k=0;k<len;k++){
+
+			if (array[i] < array[k]) {
 			
 				_c[i]--;
 	
@@ -89,42 +30,11 @@ int* sortArray( int *ptr ){
 
 		}
 		
-		_ans[_c[i]] = *(ptr+i);
-		
-		showArray(_ans);
-		
-		/*			
-		void _check(int l) {
-			if (_ar[l]==0)
-				{
-					_ans[l]=*(ptr+i);
-					_ar[l]=1;
-				}
-			else {
-				_check(l+1);
-			}
-		}
-		
-		_check(_c[i]+1);*/
-		
-		
-		
-
-	
+		_ans[_c[i]] = array[i];
 	}
 	
-	return _ans;
+	printf("\n%f %f\n",_ans[0],_ans[len-1]);
+
+	return 0;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
