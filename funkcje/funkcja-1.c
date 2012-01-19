@@ -5,18 +5,18 @@
 double przyprostokatna(double a,double b);
 
 int main(){
-	
-	przyprostokatna(3.0,5.0);
-	
+	double p;
+	p = przyprostokatna(3.0,4.0);
+	printf("%f\n", p);
 	return 0;
 }
 
 double przyprostokatna(double a,double b){
 
 	double c;
-	c = sqrt((a*a)+(b+b));	
+	c = sqrt((a*a)+(b*b));	
 
-	printf("%f", c);
+	
 	return c;
 
 }
