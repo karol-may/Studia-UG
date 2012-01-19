@@ -12,9 +12,10 @@ int main(){
 
 	snprintf(buffer, sizeof(buffer), "%d", p);
 
-	for (int i = strlen(buffer);i>0;i++){
+	for (int i = strlen(buffer);i>0;i--){
 	
 		printf("%c", buffer[i-1]);
 	}
+	putchar(10);
 	return 0;
-}
+} 
