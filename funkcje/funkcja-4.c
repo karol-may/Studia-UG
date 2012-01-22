@@ -6,14 +6,14 @@ int main(){
 
 	int p;
 	scanf("%d",&p);
-	
-	
+
+
 	char buffer[256];
 
 	snprintf(buffer, sizeof(buffer), "%d", p);
 
 	for (int i = strlen(buffer);i>0;i--){
-	
+
 		printf("%c", buffer[i-1]);
 	}
 	putchar(10);
